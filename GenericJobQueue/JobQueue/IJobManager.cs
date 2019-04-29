@@ -1,0 +1,15 @@
+﻿using System;
+
+namespace GenericQueue.JobQueue
+{
+    public interface IJobManager
+    {
+        bool AllJobsFinished();
+
+        void JobStarted(Guid jobId);
+
+        void JobCompleted(Guid jobId);
+
+        void JobFailed(Guid jobId);
+    }
+}

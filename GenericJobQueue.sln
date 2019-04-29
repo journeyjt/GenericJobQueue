@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericJobQueue", "GenericJobQueue\GenericJobQueue.csproj", "{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57D6D5F0-37EC-417F-BF90-6502B91AAB43}
+	EndGlobalSection
+EndGlobal
