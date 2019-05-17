@@ -6,7 +6,7 @@ namespace Generic.Queue
 {
     public interface IJob
     {
-        Task DoJobAsync(CancellationToken cancellationToken);
+        void DoJob(CancellationToken cancellationToken);
 
         Guid JobId { get; set; }
     }

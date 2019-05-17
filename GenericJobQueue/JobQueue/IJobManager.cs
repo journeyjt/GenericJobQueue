@@ -1,4 +1,5 @@
 ﻿using System;
+using Generic.Queue;
 
 namespace GenericQueue.JobQueue
 {
@@ -11,5 +12,7 @@ namespace GenericQueue.JobQueue
         void JobCompleted(Guid jobId);
 
         void JobFailed(Guid jobId);
+
+        JobStatus GetJobStatus(Guid jobId);
     }
 }

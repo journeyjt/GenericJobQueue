@@ -6,8 +6,8 @@
 
         bool TryDequeue(out IJob job);
 
-        void Close();
-
         bool Empty();
+
+        int Size();
     }
 }

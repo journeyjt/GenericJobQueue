@@ -40,6 +40,10 @@ namespace GenericQueue.JobQueue
             {
                 Update(jobId, JobStatus.Completed);
             }
+            else
+            {
+                throw new KeyNotFoundException(string.Format(@"{0}", jobId));
+            }
         }
 
         public void JobStarted(Guid jobId)
@@ -83,6 +87,18 @@ namespace GenericQueue.JobQueue
             lock (_jobRecord)
             {
                 _jobRecord.Add(jobId, status);
+            }
+        }
+
+        public JobStatus GetJobStatus(Guid jobId)
+        {
+            lock (_jobRecord)
+            {
+                if (_jobRecord.ContainsKey(jobId))
+                {
+                    return _jobRecord[jobId];
+                }
+                throw new KeyNotFoundException(string.Format(@"{0}", jobId));
             }
         }
     }

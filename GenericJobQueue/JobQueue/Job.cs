@@ -16,35 +16,37 @@ namespace Generic.Queue
             _action = action;
             _onCompletion = onCompletion;
             _onFailure = onFailure;
-            JobId = JobId;
+            JobId = jobId;
         }
 
-        public Task DoJobAsync(CancellationToken cancellationToken)
+        public T ActionReturnValue { get; private set; }
+        public T OnCompleteReturnValue { get; private set; }
+        public T OnFailureReturnValue { get; private set; }
+
+        public void DoJob(CancellationToken cancellationToken)
         {
             if (!cancellationToken.IsCancellationRequested)
             {
                 try
                 {
-                    _action.Invoke();
+                    ActionReturnValue = _action.Invoke();
                     if (_onCompletion != null)
                     {
-                        _onCompletion.Invoke();
+                        OnCompleteReturnValue = _onCompletion.Invoke();
                     }
                 }
                 catch (Exception e)
                 {
                     if (_onFailure != null)
                     {
-                        _onFailure.Invoke();
+                        OnFailureReturnValue = _onFailure.Invoke();
                     }
-                    throw e;
+                    else
+                    {
+                        throw e;
+                    }
                 }
             }
-            else
-            {
-                return Task.FromResult(cancellationToken);
-            }
-            return Task.FromResult(true);
         }
     }
 }

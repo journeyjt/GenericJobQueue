@@ -6,7 +6,6 @@ namespace Generic.Queue
     public class JobQueue : IJobQueue
     {
         private readonly Queue<IJob> _queue;
-        private bool close;
 
         public JobQueue()
         {
@@ -26,27 +25,14 @@ namespace Generic.Queue
             }
         }
 
-        public void Close()
-        {
-            lock (this._queue)
-            {
-                this.close = true;
-                Monitor.PulseAll(this._queue);
-            }
-        }
-
         public bool TryDequeue(out IJob job)
         {
             lock (this._queue)
             {
-                while (this._queue.Count == 0)
+                if (this._queue.Count == 0)
                 {
-                    if (close)
-                    {
-                        job = default(IJob);
-                        return false;
-                    }
-                    Monitor.Wait(this._queue);
+                    job = default(IJob);
+                    return false;
                 }
                 job = this._queue.Dequeue();
                 return true;
@@ -58,6 +44,14 @@ namespace Generic.Queue
             lock (this._queue)
             {
                 return this._queue.Count == 0;
+            }
+        }
+
+        public int Size()
+        {
+            lock (this._queue)
+            {
+                return this._queue.Count;
             }
         }
     }

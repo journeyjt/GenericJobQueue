@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericJobQueue", "GenericJobQueue\GenericJobQueue.csproj", "{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericJobQueueTests", "GenericJobQueueTests\GenericJobQueueTests.csproj", "{82D1E7E0-6B57-4FAC-975F-5CB068BC1A2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD08D11-9AD9-4EB2-9C7A-695ED213AC8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D1E7E0-6B57-4FAC-975F-5CB068BC1A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D1E7E0-6B57-4FAC-975F-5CB068BC1A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D1E7E0-6B57-4FAC-975F-5CB068BC1A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D1E7E0-6B57-4FAC-975F-5CB068BC1A2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
